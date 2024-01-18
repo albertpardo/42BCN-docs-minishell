@@ -1,0 +1,10 @@
+.DS_Store
+*.o
+**/*.o
+**/*.a
+*.out
+**/*.out
+.*.swp
+**/.*.swp
+**/*.dSYM
+philo_repo
