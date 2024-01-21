@@ -152,30 +152,4 @@ exit: exit [n]
     is that of the last command executed.
 ```
 
-### Pruebas en Bash
 
-#### Exit
-
-Estando en el shell por defecto de iMAC , que es *zsh* hago la siguiente prueba:
-
-1. cambiar a *bash*
-2. Hacer un `exit 5`
-3. Ejecutar `echo $?`
-
-Estas son las lineas extraidas del terminal: 
-
-```sh
-apardo-m@car15s4 ~ % bash
-
-The default interactive shell is now zsh.
-To update your account to use zsh, please run `chsh -s /bin/zsh`.
-For more details, please visit https://support.apple.com/kb/HT208050.
-bash-3.2$ exit 5
-exit
-apardo-m@car15s4 ~ % echo $?
-5
-```
-#### Crash terminal
-
-[these characters will crash your computer](https://www.youtube.com/watch?v=xqo3xtkfuic&list=PLGU1kcPKHMKj5yA0RPb5AK4QAhexmQwrW&index=17). Instruction :
-`:(){ :|:& };:`

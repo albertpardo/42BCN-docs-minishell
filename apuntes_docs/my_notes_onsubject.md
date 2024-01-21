@@ -141,6 +141,8 @@ Your shell should:
 - Not interpret unclosed quotes or special characters which are not required by the subject such as **\ (backslash)** or **; (semicolon)**.
 - Handle **’ (single quote)** which should prevent the shell from interpreting the metacharacters in the quoted sequence.
 - Handle **" (double quote)** which should prevent the shell from interpreting the metacharacters in the quoted sequence except for **$ (dollar sign)**.
+
+> **[metacharacter](https://www.gnu.org/software/bash/manual/html_node/Definitions.html#:~:text=A%20metacharacter%20is%20a%20space,'%2C%20or%20'%20%3E%20'.&text=A%20word%20consisting%20solely%20of,shell%20variable%20and%20function%20names.)** : A character that, when unquoted, separates words. A metacharacter is a **space**, **tab: \t**, **newline: \n**, or one of the following characters: **|**, **&**, **;**, **(**, **)**, **<**’, or **>**.
 - Implement redirections:
 	- *<* should redirect input.
 	- *>* should redirect output.
