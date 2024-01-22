@@ -64,7 +64,8 @@ en.subject_minishell_v7_1.pdf
 evaluator_docs
 mini_repo
 update_local_repos_mini.sh
-bash-3.2$```
+bash-3.2$
+```
 
 ```sh
 bash-3.2$ "ls"

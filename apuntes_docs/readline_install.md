@@ -4,9 +4,9 @@
 
 Tener instalado brew
 
-Instalacion : `brew install readline`
+Instalación : `brew install readline`
 
-Entre otra info, aparece esto en pantalla 
+Entre otra info, aparece esto en pantalla:
 
 ```txt
 
