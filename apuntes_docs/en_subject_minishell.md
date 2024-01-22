@@ -1,6 +1,6 @@
 # Minishell
 
-## Instalar Softare en IMAC de 42
+## Instalar Software en IMAC de 42
 
 > Se necesita un instalador para MAC para poder instalar sofware . Hay uno oficial para 42 su github es [42 brew](https://github.com/42School/brew)
 >
