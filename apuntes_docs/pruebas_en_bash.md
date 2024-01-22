@@ -159,3 +159,60 @@ bash: "ls"
 : command not found
 bash-3.2$
 ```
+
+
+## Pruebas con ;
+
+Se incluye el comando *echo*:
+
+```sh
+bash-3.2$ ls -la ; echo ; echo "--- en la siguiente linea se ejecuta ls --" ; ls
+total 16
+drwxr-xr-x   6 apardo-m  2023_barcelona   204 Jan 20 16:08 .
+drwxr-xr-x   8 apardo-m  2023_barcelona   272 Jan 21 17:03 ..
+drwxr-xr-x  15 apardo-m  2023_barcelona   510 Jan 22 15:11 .git
+-rwxr-xr-x   1 apardo-m  2023_barcelona    81 Jan 20 15:44 .gitignore
+-rw-r--r--   1 apardo-m  2023_barcelona  1173 Jan 22 14:49 README.md
+drwxr-xr-x  12 apardo-m  2023_barcelona   408 Jan 22 12:44 apuntes_docs
+
+--- en la siguiente linea se ejecuta ls --
+README.md	apuntes_docs
+bash-3.2$
+```
+Según el subject :
+>  Not interpret unclosed quotes or special characters which are not required by the subject such as **\ (backslash)** or **; (semicolon)**.
+
+Prueba entre comillas simples:
+
+```sh
+bash-3.2$ 'ls -la ; echo ; echo "--- en la siguiente linea se ejecuta ls --" ; ls'
+bash: ls -la ; echo ; echo "--- en la siguiente linea se ejecuta ls --" ; ls: command not found
+bash-3.2$
+```
+
+## Pruebas con \<\<
+
+Ejemplo extraido de [How does "cat << EOF" work in bash?](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash) y ejecutado localmente:
+
+```sh
+bash-3.2$ cat <<EOF > print.sh
+> #!/bin/bash
+> echo \$PWD
+> echo $PWD
+> EOF
+bash-3.2$ ls
+README.md	apuntes_docs	print.sh
+bash-3.2$ cat print.sh
+#!/bin/bash
+echo $PWD
+echo /Users/apardo-m/Documents/23-Cursus/03_circle/2_minishell/apuntes_mini_github
+bash-3.2$
+```
+
+```sh
+
+```
+
+```sh
+
+```

@@ -143,10 +143,18 @@ Your shell should:
 - Handle **" (double quote)** which should prevent the shell from interpreting the metacharacters in the quoted sequence except for **$ (dollar sign)**.
 
 > **[metacharacter](https://www.gnu.org/software/bash/manual/html_node/Definitions.html#:~:text=A%20metacharacter%20is%20a%20space,'%2C%20or%20'%20%3E%20'.&text=A%20word%20consisting%20solely%20of,shell%20variable%20and%20function%20names.)** : A character that, when unquoted, separates words. A metacharacter is a **space**, **tab: \t**, **newline: \n**, or one of the following characters: **|**, **&**, **;**, **(**, **)**, **<**’, or **>**.
+
+> **DUDA**: como gestionamos algo parecido a esto (cada línea es un ejemplo de comando): 
+> - `ls -la ; echo ; echo "en la siguiente linea se ejecuta ls" ; ls`
+> - `'"ls"`  . Aqui *bash* entra en una especie de editor donde espera cerrar la comilla simple.
+
+
 - Implement redirections:
 	- *<* should redirect input.
 	- *>* should redirect output.
 	- *<<* should be given a delimiter, then read the input until a line containing the delimiter is seen. However, it doesn’t have to update the history!
+		- > Creo que aqui hemos de usar el concepto de [here-document](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_07_04) de bash. Extraido de : [How does "cat << EOF" work in bash?](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash)
+	
 	- *>>* should redirect output in append mode.
 - Implement **pipes (| character)**. The output of each command in the pipeline is connected to the input of the next command via a pipe.
 -	Handle environment variables (**$ followed by a sequence of characters**) which should expand to their values.
