@@ -139,6 +139,14 @@ Your shell should:
 > Therefore, using "norm" type structures in the global scope is forbidden.
 
 - Not interpret unclosed quotes or special characters which are not required by the subject such as **\ (backslash)** or **; (semicolon)**.
+	- > **Suposición** Deberemos gestionar el error con un mensaje propio. Ejemplo para *unclosed quotes* de *maiadegraaf*
+	  > ```sh	
+	  >  minishell$ "ls
+	  >  minishell: syntax error: unable to locate closing quotation
+	  > ```
+
+	- >  **\ (backslash)** y **; (semicolon)** se pueden tratar como chars normales.
+
 - Handle **’ (single quote)** which should prevent the shell from interpreting the metacharacters in the quoted sequence.
 - Handle **" (double quote)** which should prevent the shell from interpreting the metacharacters in the quoted sequence except for **$ (dollar sign)**.
 
@@ -146,6 +154,7 @@ Your shell should:
 
 > **DUDA**: como gestionamos algo parecido a esto (cada línea es un ejemplo de comando): 
 > - `ls -la ; echo ; echo "en la siguiente linea se ejecuta ls" ; ls`
+>	- Probado con 
 > - `'"ls"`  . Aqui *bash* entra en una especie de editor donde espera cerrar la comilla simple.
 
 
