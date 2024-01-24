@@ -25,6 +25,9 @@ Mirar esta carpeta:
 
 A list of Minishell links for topic **minishell-42**. See : https://github.com/topics/minishell-42
 
+- Con links y ejemplos para test  [Kuninoto](https://github.com/Kuninoto/42_minishelle)
+	- > Su definicion de [structuras](https://github.com/Kuninoto/42_minishell/blob/master/lvl_3_minishell/includes/minishell.h) parece más simple que la de [maia](https://github.com/maiadegraaf/minishell/blob/main/includes/parser.h)
+
 - Dan una idea para debugar Minishell con VSCode (extraido de slack)[Debug throught VSCode](https://github.com/waltergcc/42-Small-Tutorials/tree/main/Debug-throught-VSCode)
 - Comenta como instalar readline [Minishell42](https://github.com/tjensen42/42-minishell#install-readline-on-42-macs)
 - [Minishell_42 by Hamzaelkhatri](https://github.com/Hamzaelkhatri/minishell). There are some resources links.
