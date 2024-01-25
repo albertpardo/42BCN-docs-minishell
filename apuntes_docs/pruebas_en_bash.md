@@ -209,10 +209,41 @@ echo /Users/apardo-m/Documents/23-Cursus/03_circle/2_minishell/apuntes_mini_gith
 bash-3.2$
 ```
 
-```sh
-
-```
+## Uso de **|** con **cat**
 
 ```sh
-
+bash-3.2$ cat | cat | ls
+Makefile	includes	outfile
+README.md	infile		src
+build		libraries
+error.txt	minishell
+1
+2
 ```
+Orden de ejecución :
+1. ls
+2. primer cat 
+2. segundo cat
+
+Otra prueba:
+
+```sh
+bash-3.2$ cat << uno | cat << dos | ls
+> uno
+> dos
+Makefile	includes	outfile
+README.md	infile		src
+build		libraries
+error.txt	minishell
+```
+Orden de ejecución:
+1. cat << uno
+2. cat << dos
+3. ls
+
+e
+Creo que lo que hace es obtener los diferentes comandos con el *pipe* (**|**) sin chequear si hay *<<* entre los argumentos:
+1. `cat << uno` a `execve(...)`
+2. `cat << uno` a `execve(...)`
+2. `ls` a `execve(...)`
+

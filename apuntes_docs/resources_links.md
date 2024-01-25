@@ -4,7 +4,7 @@ This document is online on this link [hackmd.io - resources Minishell](https://h
 
 ## Readline
 
-Mirar esta carpeta:
+Mirar esta carpeta en el iMAC de 42 Barcelona:
 
 `/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/readline/readline.h`
 
@@ -19,9 +19,16 @@ Mirar esta carpeta:
 - [Minishell: Building a mini-bash (a @42 project) by MannBell](https://m4nnb3ll.medium.com/minishell-building-a-mini-bash-a-42-project-b55a10598218)
 - [42Cursus-Minishell by Achrafbelarif](https://achrafbelarif.medium.com/42cursus-minishell-29cd25f972e6)
 
-- Descripcion de las funciones autorizadas [Minishell by Jseo Doodle](https://bigpel66.oopy.io/library/42/inner-circle/10)
+- Descripción de las funciones autorizadas [Minishell by Jseo Doodle](https://bigpel66.oopy.io/library/42/inner-circle/10)
 
-### Only Github
+- [Building a shell commands interpreter similar to BASH from scratch with C (Part 1 Theory) by hel-mefe](https://medium.com/@hichamelmefeddel/building-a-shell-commands-interpreter-similar-to-bash-from-scratch-with-c-part-1-theory-64fdc141617d)
+	- [GitHub Minihshell by hel-mefe](https://github.com/hel-mefe/Minishell-42)
+	- > *240125* : Este artículo ha dado la idea de como solucionar el tema de *here doscuments* usando *C* . Se ha de utilizar **readline()** imprmimiendo el mismo prompt que imprime *bash* cuando entra en modo  *here doscuments*. Esto parece coincidir con el Tip del subject donde indica : **<** *should be given a delimiter, then read the input until a line containing the delimiter is seen. However, it doesn’t have to update the history!*
+
+- Consulta sobre *Here Documents* in c [Automate C program standard inputs with bash](https://www.codeproject.com/Questions/5300405/Automate-C-program-standard-inputs-with-bash) 
+	- > *240125* : Una de las respuestas indica como implementar el comportamiento de `<<` usando bash.
+
+### Github or similar
 
 A list of Minishell links for topic **minishell-42**. See : https://github.com/topics/minishell-42
 
@@ -35,11 +42,23 @@ A list of Minishell links for topic **minishell-42**. See : https://github.com/t
 
 - Usa *isatty*, *termios struct*  [Minishell by sophiakoulen](https://github.com/sophiakoulen/minishell)
 - Usa *isatty*  y presenta algunos ejemplos para testear Minishell [Minishell by titouanck](https://github.com/titouanck/42-Minishell)
+- Minishell-42 with [Test Comands by Gaspachow](https://codesandbox.io/p/sandbox/gaspachowminishell-42-04ns1?file=%2Fcorrection%2Ftest_commands) 
+
+- [Minishell by Pyr-0](https://github.com/Pyr-0/Minishell-42)
+
+- [Minishell by gmartin](https://github.com/gemartin99/Minishell)
+
 
 ### Videos
 
 - [Conférences 42sh 2019 - Architecture d'un shell](https://www.youtube.com/watch?v=oIFRiwFRSRY)
 - [Lista de videos para Minishell by eleman](https://www.youtube.com/playlist?list=PLGU1kcPKHMKj5yA0RPb5AK4QAhexmQwrW)
+
+- [My own shell by tnam](https://www.youtube.com/watch?app=desktop&v=DaiAOOJ5oR4). Hace una comparativa simultanea del comportamiento de su *minishell* con el *bash*. Para ello , activa una ventana con dos terminales y hace que lo que escriba en su terminal con *minishell* aparezca a la vez en el otro terminal con *bash* (en Mac se consigue con **Cmd + Option + i**  y se desactiva con el mismo combinación)
+	> Interesante por que implementa la siguiente instrucción : `< infile cat | cat -e << here1 | cat -e | cat -e > outfile`. [link minuto donde lo hace](https://www.youtube.com/watch?app=desktop&v=DaiAOOJ5oR4) [link desde el  minuto donde lo hace](https://www.youtube.com/watch?app=desktop&v=DaiAOOJ5oR4). **DUDA CON LOS DIRECCIONAMIENTOS **
+	> He realizado un par de modificaciones de la instrucción anterior en bash y su comportamiento en bahs es diferente a la instrucción `< infile cat | cat -e << here1 | cat -e | cat -e > outfile`:
+	> - `cat | cat -e << here1 | cat -e | cat -e < infile > outfile`
+	> - `cat | cat -e << here1 | cat -e | cat -e > outfile < infile`
 
 #### 240109 by Sergio
 
@@ -61,171 +80,6 @@ A list of Minishell links for topic **minishell-42**. See : https://github.com/t
 
 - [Serie de videos : Write Your Own Shell by Jess-Inspired](https://www.youtube.com/watch?v=cIBmeEpsMj0&list=PLxIRFba3rzLzxxZMMbrm_-mkI7mV9G0pj)
 
-### Test Comands 
-
-#### by Gaspachow/minishell-42 [Test Comands](https://codesandbox.io/p/sandbox/gaspachowminishell-42-04ns1?file=%2Fcorrection%2Ftest_commands) 
-
-```shell
----- Test commands for each part of the subject ----
-
-- SIMPLE COMMAND:
-/bin/ls
-clear
-
-- ARGUMENTS:
-ls .
-ls ..
-ls parser
-cat correction/test_commands
-grep bin correction/test_commands
-
-
-- ECHO:
-echo
-echo -n
-echo -n -n -n ok
-echo ok bonjour
-echo salut coucou Woop woop -n
-
-- EXIT (don't forget to relaunch minishell after each exit, test with echo $? in bash after each exit):
-exit
-exit 130
-exit wow
-exit 1 yo
-exit 12 49
-exit 255
-
-
-- RETURN VALUE OF PROCESS:
-ls
-echo $?
-
-ls oegohe
-echo $?
-
-echo cool
-echo $?
-
-./minishell
-exit 42
-echo $?
-
-- SEMICOLONS:
-ls . ; ls .. ; cat correction/test_commands ; ls parser
-cat ; cat ; echo -n "salut " ; echo cher correcteur ; ls
-cat;cat;echo -n "salut "; echo cher correcteur ;ls
-
-
-- SIGNALS (blocking command to test):
-cat
-grep
-./minishell
-
-- DOUBLE QUOTES:
-echo "bonjour l'ami"
-echo "wowie!"
-echo "allez bonjour ""trop bien" ok" salut"
-echo " wow \" top \\" "test du \test \ \\ ok \" \" \' "
-
-- ENV:
-env
-env | grep PATH
-
-- EXPORT:
-export test=ok
-echo $test
-export test
-echo $test
-export test=diff
-echo $test
-
-- UNSET :
-env | grep test
-unset test
-env | grep test
-echo $test
-
-- ENV VARIABLE:
-echo $PATH
-export ok="woooow salut! ok..."
-echo $ok
-export ok="-YO-"
-echo " topitop $ok cool \$ok cool \\$ok \\\$ok"
-
-- CD and PWD:
-cd ..
-ls
-pwd
-cd minishell
-ls
-pwd
-cd
-ls
-pwd
-cd -
-ls
-pwd
-ls parser
-pwd ..
-pwd parser
-pwd .
-ls
-
-- Relative PATH:
-./minishell
-exit
-cd parser
-../minishell
-exit
-cd ..
-
-- ENV PATH:
-ls
-clear
-cat main.c
-wc
-awk
-env | grep PATH
-unset PATH
-ls
-wc
-cat
-export PATH=(include here multiple directories previous env | grep PATH printed)
-
-- SIMPLE QUOTES:
-echo 'coco'
-echo 'coco \\ wow $ok'
-echo ' salut " hoho ''ok ok'
-echo ''
-cat ''
-echo ' ok ; wow ; cat ; ls ; echo $ok'
-
-- REDIRECTION:
-echo bonjour > fichier
-cat < fichier
-cat < fichier > test
-cat < test >> fichier
-cat < test
-cat < fichier
-cat < test < test < test < test < test < test
-cat < test < test < test < test < fichier
-cat < test > a1 > a2 >> a3 > a4 >> a5 > a6
-
-- PIPES:
-cat a6 | grep bonjour
-cat main.c | grep int
-cat correction/test_commands | grep cat
-ls | cat | grep m
-ls pjoqfpoj | grep bla | cat
-cat main.c | grep char > mainchar.txt
-ls | cat > ls.txt
-ls | cat | cat >> ls.txt
-cat < ls.txt | grep m
-
-- CRAZY:
-fohreogharpgh
-cat main.c parser/parser.c parser/parser_delegator.c parser/input_split.c ; echo wow wowow w w w w w w w w w  w w w w w w  w w w w w w  w w w w  w w w  w w w w  w w ok o k ok ok o ko k ok ok o ko k ok ok o ko k ok ok o ko k ok ok o ko k okkk
-```
 ### Testers
 
 > **231231 : 42 HA PEDIDO QUE RETIRE EL REPOSITORIO** 
