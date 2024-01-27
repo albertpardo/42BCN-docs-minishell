@@ -17,10 +17,11 @@ This document is online on this link [hackmd.io - Tips for Minishell](https://ha
 ###  Tips by *@alajara-*
 
 - Tener encuenta **CDPATH**.  **@alajara-** indica que se comenta muchas veces en el manual de bash. (Lo he comprobado haciendo una busqueda por palabra clave en el pdf y aparece bastantes veces). A su parecer, considera que es importante y por lo que ha indagado durante la realizacion del proyecto, poca gente lo tiene encuenta.
+- [Github de su equipo](https://github.com/LAG-jara/minishell) y un [Manual del proyecto](https://github.com/Liam-McHara/minishell-manual/blob/main/manual.md)
 
 ### Tips para pruebas
 
-- Extraido de [intra 42Barcelona](https://projects.intra.42.fr/projects/42cursus-minishell/projects_users/3339786) : curiosamente cuando intento ejecutar unos 600-700 cat| el programa no hace lo mismo que bash, punto a mejorar sin dudai
+- Extraido de [intra 42Barcelona](https://projects.intra.42.fr/projects/42cursus-minishell/projects_users/3339786) : curiosamente cuando intento ejecutar unos 600-700 cat| el programa no hace lo mismo que bash, punto a mejorar sin duda
 
 - Extraido de [intra 42Barcelona](https://projects.intra.42.fr/projects/42cursus-minishell/projects_users/3247950) :
 	- como limpiar el promt al hacer Cntrl+C.

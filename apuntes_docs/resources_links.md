@@ -39,15 +39,9 @@ A list of Minishell links for topic **minishell-42**. See : https://github.com/t
 - Comenta como instalar readline [Minishell42](https://github.com/tjensen42/42-minishell#install-readline-on-42-macs)
 - [Minishell_42 by Hamzaelkhatri](https://github.com/Hamzaelkhatri/minishell). There are some resources links.
 - Tiene una carpeta con ficheros de test[Minishell_42 by tjensen42](https://github.com/tjensen42/42-minishell)
-
 - Usa *isatty*, *termios struct*  [Minishell by sophiakoulen](https://github.com/sophiakoulen/minishell)
-- Usa *isatty*  y presenta algunos ejemplos para testear Minishell [Minishell by titouanck](https://github.com/titouanck/42-Minishell)
-- Minishell-42 with [Test Comands by Gaspachow](https://codesandbox.io/p/sandbox/gaspachowminishell-42-04ns1?file=%2Fcorrection%2Ftest_commands) 
-
-- [Minishell by Pyr-0](https://github.com/Pyr-0/Minishell-42)
-
 - [Minishell by gmartin](https://github.com/gemartin99/Minishell)
-
+- [Github by alajara team](https://github.com/LAG-jara/minishell) y un [Manual del proyecto](https://github.com/Liam-McHara/minishell-manual/blob/main/manual.md)
 
 ### Videos
 
