@@ -25,8 +25,12 @@ Mirar esta carpeta en el iMAC de 42 Barcelona:
 	- [GitHub Minihshell by hel-mefe](https://github.com/hel-mefe/Minishell-42)
 	- > *240125* : Este artículo ha dado la idea de como solucionar el tema de *here doscuments* usando *C* . Se ha de utilizar **readline()** imprmimiendo el mismo prompt que imprime *bash* cuando entra en modo  *here doscuments*. Esto parece coincidir con el Tip del subject donde indica : **<** *should be given a delimiter, then read the input until a line containing the delimiter is seen. However, it doesn’t have to update the history!*
 
+#### Here Documents
+
 - Consulta sobre *Here Documents* in c [Automate C program standard inputs with bash](https://www.codeproject.com/Questions/5300405/Automate-C-program-standard-inputs-with-bash) 
 	- > *240125* : Una de las respuestas indica como implementar el comportamiento de `<<` usando bash.
+
+- [Bash HereDoc Tutorial With Examples](https://phoenixnap.com/kb/bash-heredoc)
 
 ### Github or similar
 
