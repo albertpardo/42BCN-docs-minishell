@@ -49,6 +49,8 @@ A list of Minishell links for topic **minishell-42**. See : https://github.com/t
 
 ### Videos
 
+- [Comunicar 3 procesos (ls, grep y wc) usando 2 pipes, fork(), dup2(), execlp(). Programar en C, Linux](https://www.youtube.com/watch?v=8LdQ09Ep9RY) . Su [Code](https://github.com/WhileTrueThenDream/ExamplesCLinuxUserSpace/blob/master/3Processes2Pipes.c)
+
 - [Conférences 42sh 2019 - Architecture d'un shell](https://www.youtube.com/watch?v=oIFRiwFRSRY)
 - [Lista de videos para Minishell by eleman](https://www.youtube.com/playlist?list=PLGU1kcPKHMKj5yA0RPb5AK4QAhexmQwrW)
 
