@@ -1,4 +1,13 @@
-This document is online on this link [HackMD - Minishell a tener encuenta](https://hackmd.io/haZwH0YnT7egPQuXGZxXtg?both) 
+## Instrucciones shell
+
+
+###  feaguila
+**cat /dev/random** presenta en pantalla lineas aleatorias
+**cat /dev/random | head -n 1** presenta solo una linea
+
+Creo que cuando un comando no se puede ejecutar el Bash genera un 127 y se puede consultar con **echo $?** 
+
+Tendriamos que probar formatos null de entrada para temas de errores.
 
 ## Combinaciones con tecla 'Ctrl'
 
