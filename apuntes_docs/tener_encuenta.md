@@ -6,6 +6,16 @@ A probar :
 - **< /dev/random**
 - **< /dev/random cat**
 
+Creo que esto esta en la hoja del evaluador:
+
+> Set the $PATH to a multiple directory value (directory1:directory2)
+
+### Quitar el ENVIRONMENT del minishell
+
+- **env -i ./minishell**
+
+Solucion : tener un envaroment por defecto 
+
 ###  feaguila
 **cat /dev/random** presenta en pantalla lineas aleatorias
 **cat /dev/random | head -n 1** presenta solo una linea
