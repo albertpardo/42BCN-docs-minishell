@@ -1,29 +1,5 @@
 ## Instrucciones shell
 
-A probar :
-
-- **< /dev/urandom** 
-- **< /dev/random**
-- **< /dev/random cat**
-
-Creo que esto esta en la hoja del evaluador:
-
-> Set the $PATH to a multiple directory value (directory1:directory2)
-
-### Quitar el ENVIRONMENT del minishell
-
-- **env -i ./minishell**
-
-Solucion : tener un envaroment por defecto 
-
-###  feaguila
-**cat /dev/random** presenta en pantalla lineas aleatorias
-**cat /dev/random | head -n 1** presenta solo una linea
-
-Creo que cuando un comando no se puede ejecutar el Bash genera un 127 y se puede consultar con **echo $?** 
-
-Tendriamos que probar formatos null de entrada para temas de errores.
-
 ## Combinaciones con tecla 'Ctrl'
 
 | Combinacion 'Ctrl' | Descripcion |
