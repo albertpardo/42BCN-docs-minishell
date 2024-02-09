@@ -1,5 +1,10 @@
 ## Instrucciones shell
 
+A probar :
+
+- **< /dev/urandom** 
+- **< /dev/random**
+- **< /dev/random cat**
 
 ###  feaguila
 **cat /dev/random** presenta en pantalla lineas aleatorias
