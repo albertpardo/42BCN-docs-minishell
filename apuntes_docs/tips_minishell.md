@@ -37,6 +37,14 @@ bash-3.2$ echo $PATH
 
 A partir de aqui se puede hacer una funcion que replique el minimo entorno que tiene bash.
 
+### "cat | ls"
+
+Creo que hay que gestionar señales. Pero no estoy seguro. Hay que mirar otros códigos.
+
+Posibles links para mirar:
+
+- [How does head stops cat in following command : cat /dev/urandom | head -c 10 ](https://unix.stackexchange.com/questions/613848/how-does-head-stops-cat-in-following-command-cat-dev-urandom-head-c-10)
+
 ###  feaguila
 **cat /dev/random** presenta en pantalla lineas aleatorias
 **cat /dev/random | head -n 1** presenta solo una linea
