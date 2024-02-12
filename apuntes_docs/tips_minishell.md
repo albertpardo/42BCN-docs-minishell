@@ -10,11 +10,32 @@ Creo que esto esta en la hoja del evaluador:
 
 > Set the $PATH to a multiple directory value (directory1:directory2)
 
-### Quitar el ENVIRONMENT del minishell
+### Cambiar el TTY(teclado) de entrada por un fichero al arrancar
 
-- **env -i ./minishell**
+- **./minishell < /dev/urandom**
 
-Solucion : tener un envaroment por defecto 
+Se puede solucionar usando **isatty()**
+
+
+### Quitar el ENVIRONMENT bash
+
+Ejemplo en bash:
+
+```sh
+bash-3.2$ env -i bash
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+bash-3.2$ env
+PWD=/Users/apardo-m
+SHLVL=1
+_=/usr/bin/env
+bash-3.2$ echo $PATH
+/usr/gnu/bin:/usr/local/bin:/bin:/usr/bin:.
+```
+
+A partir de aqui se puede hacer una funcion que replique el minimo entorno que tiene bash.
 
 ###  feaguila
 **cat /dev/random** presenta en pantalla lineas aleatorias
