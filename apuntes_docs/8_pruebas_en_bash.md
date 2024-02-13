@@ -67,21 +67,6 @@ Creo que cuando un comando no se puede ejecutar el Bash genera un 127 y se puede
 
 Tendriamos que probar formatos null de entrada para temas de errores.
 
-###  cat << 1 | cat << 2 | cat << 3 > borrame
-
-```sh
-bash-3.2$ cat << 1 | cat << 2 | cat << 3 > borrame
-> unos
-> 1
-> dos
-> 2
-> tres
-> 3
-bash-3.2$ cat borrame
-tres
-bash-3.2$
-```
-
 ## Pruebas en Bash
 
 ### Ver como podemos evitar : Crash terminal
