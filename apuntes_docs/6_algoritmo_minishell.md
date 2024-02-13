@@ -37,6 +37,8 @@ while(1)
 		- [The Recursive Descent](https://en.wikipedia.org/wiki/Recursive_descent_parser). Also commented by *hhp3 del MIT*. Other possible resources: [Articles in tag "Recursive descent parsing"](https://eli.thegreenplace.net/tag/recursive-descent-parsing)
 		- [the shunting-yard algorithm](https://en.wikipedia.org/wiki/Shunting_yard_algorithm)
 
+- Antes de ejecutar hay que hacer un REDIRECT y hacer todos los HereDocs que haya en la instruciones  ??? Consusltar  *process_commands(...)*  en *redirect_and_execute.c* de lajara.
+
 - Ejecucion del comando (**Duda** : El comando toma el control de la ejecucion?):
 	- Verificar si es un *builtint* . Es decir , de los que tenemos que implementar.
 	- Verificar si el comando es un comando valido en *bash*. Ejecutarlo y capturar su respuesta (por si hay error).

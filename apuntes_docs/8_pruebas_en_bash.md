@@ -51,6 +51,28 @@ bash-3.2$ echo $PATH
 
 A partir de aqui se puede hacer una funcion que replique el minimo entorno que tiene bash.
 
+
+
+### heredocs
+
+####  cat << "2"
+
+Las comillas del string usado como EOF se ignoran . Si no se ponen, *cat* lo acepta igual.
+
+```sh
+bash-3.2$ cat << "2"
+> 1
+> "2"
+> dos
+> 3
+> 2
+1
+"2"
+dos
+3
+bash-3.2$
+```
+
 ### "cat | ls"
 
 Creo que hay que gestionar señales. Pero no estoy seguro. Hay que mirar otros códigos.
@@ -246,7 +268,7 @@ bash-3.2$
 
 ## Pruebas con \<\<
 
-Ejemplo extraido de [How does "cat << EOF" work in bash?](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash) y ejecutado localmente:
+Ejemplo extraido de [How does cat << EOF  work in bash?](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash) y ejecutado localmente:
 
 ```sh
 bash-3.2$ cat <<EOF > print.sh

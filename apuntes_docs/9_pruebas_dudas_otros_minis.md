@@ -2,6 +2,24 @@
 
 Pruebas de dudas en diferentes minishell's. Cada título corresponde a una duda.
 
+## usar Macros de wait para gestionar errores
+
+
+Extraido de *read_heredoc.c* (lajara) :
+
+```c
+	wait(&status);
+	if (WIFEXITED(status))
+		return (WEXITSTATUS(status));
+	else if (WIFSIGNALED(status) && (WTERMSIG(status) == SIGINT))
+		return (EXIT_FAILURE);
+```
+
+usa : 
+- `fd_file = open_file(file, O_CREAT | O_WRONLY | O_TRUNC);`
+- acitva señal usando : `set_signals(HEREDOC);`
+
+
 ## `ls -la ; echo ; echo "en la siguiente linea se ejecuta ls" ; ls`
 
 Para *bash* el *;* indica que debe ejectar cada comando por separado y de manera consecutiva
@@ -83,4 +101,5 @@ minish$ cat borrame
 tres
 minish$
 ```
+
 
