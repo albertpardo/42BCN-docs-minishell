@@ -76,7 +76,7 @@
 - Verifica que `ctrl-D` en una entrada con texto no hace nada.
 - Verifica que `ctrl-\` en una entrada con texto no hace nada.
 - Verifica que `ctrl-C` después de ejecutar un comando bloqueante como `cat` sin argumentos o `grep "algo"`.
-- Verifica que `ctrl-\` después de ejecutar un comando bloqueante como `cat` sin argumentos o `grep "algo"``.
+- Verifica que `ctrl-\` después de ejecutar un comando bloqueante como `cat` sin argumentos o `grep "algo"`.
 - Verifica que `ctrl-D` después de ejecutar un comando bloqueante como cat sin argumentos o `grep "algo"`.
 - Hazlo varias veces con distintos comandos.
 - Si el programa termina, utiliza el flag de crash.
@@ -122,7 +122,7 @@
 - [ ] Yes
 - [ ] No
 
-###unset
+### unset
 
 - Exporta variables de entorno, crea nuevas, y reemplaza viejas.
 - Utiliza unset para eliminar algunas de ellas.
@@ -167,10 +167,10 @@
 
 ### Redirecciones
 
--Ejecuta comandos con redirecciones `<` y/o `>`.
--Repite esto varias veces con diferentes comandos y argumentos, cambia de vez en cuando `>` por `>>`.
--Comprueba si varias redirecciones del mismo tipo fallan.
--Prueba la redirección `<<` (no necesita actualizar el historial).
+- Ejecuta comandos con redirecciones `<` y/o `>`.
+- Repite esto varias veces con diferentes comandos y argumentos, cambia de vez en cuando `>` por `>>`.
+- Comprueba si varias redirecciones del mismo tipo fallan.
+- Prueba la redirección `<<` (no necesita actualizar el historial).
 
 - [ ] Yes
 - [ ] No
