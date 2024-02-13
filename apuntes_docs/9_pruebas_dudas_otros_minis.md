@@ -51,3 +51,36 @@ minishell: syntax error: unable to locate closing quotation
 ```
 
 No cerrar la **"** , se trata como un error sintáctico.
+
+##  cat << 1 | cat << 2 | cat << 3 > borrame
+
+En bash:
+
+```sh
+bash-3.2$ cat << 1 | cat << 2 | cat << 3 > borrame
+> unos
+> 1
+> dos
+> 2
+> tres
+> 3
+bash-3.2$ cat borrame
+tres
+bash-3.2$
+```
+
+### lajara
+
+```sh
+minish$ cat << 1 | cat << 2 | cat << 3 > borrame
+> uno
+> 1
+> dos
+> 2
+> tres
+> 3
+minish$ cat borrame
+tres
+minish$
+```
+
