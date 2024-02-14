@@ -10,8 +10,8 @@
 
 ### Quitar el Enviroment de bash/minishell:
 
-- `env -i bash`   Elimina el environment de bash
-- `env`		: Vamos que environmet queda en bash
+- `env -i bash` :   Elimina el environment de bash
+- `env`	: Vemos que environmet queda en bash
 
 ### HerrDocs
 
