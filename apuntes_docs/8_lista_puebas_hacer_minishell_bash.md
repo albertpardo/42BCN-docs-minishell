@@ -5,7 +5,7 @@
 ### Iniciar minishell con variables de entrada o con redirecciones de entrada salidad
 
 - `./minishell < /dev/urandom`
-- `./minishell << EOF'
+- `./minishell << EOF`
 - `./minishell > borrame.txt`
 
 ### Quitar el Enviroment de bash/minishell:
@@ -22,11 +22,13 @@
 - `cat << 1 | cat << 2 | cat << 3 > ls`
 
 ### Redirecciones < ,  >
+
 - `< /dev/urandom`
 - `< /dev/random`
 - `< /dev/random cat`
 
 ### Pruebas varias
+
 - `cat | ls`
 - `cat | cat | ls`
 - `cat /dev/random`: presenta en pantalla lineas aleatorias
