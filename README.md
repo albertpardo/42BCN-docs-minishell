@@ -16,8 +16,9 @@ Listado de archivos de la carpeta *apuntes_docs*:
 
 ## PRUEBAS
 
- - [pruebas_en_bash](apuntes_docs/8_pruebas_en_bash.md) : Diferentes pruebas dentro del entorno **bash** para tener como base como posibles test del proyecto *minishell*
-- [pruebas en otros minishells](apuntes_docs/9_pruebas_dudas_otros_minis.md)
+- [listado de pruebas a realizar en bash / minishell](8_lista_puebas_hacer_minishell_bash.c)
+- [pruebas_realizadas_en_bash](apuntes_docs/9_pruebas_realizadas_en_bash.md) : Diferentes pruebas dentro del entorno **bash** para tener como base como posibles test del proyecto *minishell*
+- [pruebas en otros minishells](apuntes_docs/10_pruebas_dudas_otros_minis.md)
 
 ## Evalua
 

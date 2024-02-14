@@ -42,7 +42,7 @@ A list of Minishell links for topic **minishell-42**. See : https://github.com/t
 - Dan una idea para debugar Minishell con VSCode (extraido de slack)[Debug throught VSCode](https://github.com/waltergcc/42-Small-Tutorials/tree/main/Debug-throught-VSCode)
 - Comenta como instalar readline [Minishell42](https://github.com/tjensen42/42-minishell#install-readline-on-42-macs)
 - [Minishell_42 by Hamzaelkhatri](https://github.com/Hamzaelkhatri/minishell). There are some resources links.
-- Tiene una carpeta con ficheros de test[Minishell_42 by tjensen42](https://github.com/tjensen42/42-minishell)
+- Tiene una carpeta con ficheros de test [Minishell_42 by tjensen42](https://github.com/tjensen42/42-minishell)
 - Usa *isatty*, *termios struct*  [Minishell by sophiakoulen](https://github.com/sophiakoulen/minishell)
 - [Minishell by gmartin](https://github.com/gemartin99/Minishell)
 - [Github by alajara team](https://github.com/LAG-jara/minishell) y un [Manual del proyecto](https://github.com/Liam-McHara/minishell-manual/blob/main/manual.md)
@@ -56,7 +56,7 @@ A list of Minishell links for topic **minishell-42**. See : https://github.com/t
 
 - [My own shell by tnam](https://www.youtube.com/watch?app=desktop&v=DaiAOOJ5oR4). Hace una comparativa simultanea del comportamiento de su *minishell* con el *bash*. Para ello , activa una ventana con dos terminales y hace que lo que escriba en su terminal con *minishell* aparezca a la vez en el otro terminal con *bash* (en Mac se consigue con **Cmd + Option + i**  y se desactiva con el mismo combinación)
 	> Interesante por que implementa la siguiente instrucción : `< infile cat | cat -e << here1 | cat -e | cat -e > outfile`. [link minuto donde lo hace](https://www.youtube.com/watch?app=desktop&v=DaiAOOJ5oR4) [link desde el  minuto donde lo hace](https://www.youtube.com/watch?app=desktop&v=DaiAOOJ5oR4). **DUDA CON LOS DIRECCIONAMIENTOS **
-	> He realizado un par de modificaciones de la instrucción anterior en bash y su comportamiento en bahs es diferente a la instrucción `< infile cat | cat -e << here1 | cat -e | cat -e > outfile`:
+	> He realizado un par de modificaciones de la instrucción anterior en bash y su comportamiento en bash es diferente a la instrucción `< infile cat | cat -e << here1 | cat -e | cat -e > outfile`:
 	> - `cat | cat -e << here1 | cat -e | cat -e < infile > outfile`
 	> - `cat | cat -e << here1 | cat -e | cat -e > outfile < infile`
 
