@@ -313,13 +313,57 @@ build		libraries
 error.txt	minishell
 ```
 Orden de ejecución:
-1. cat << uno
-2. cat << dos
-3. ls
+1. `cat << uno`
+2. `cat << dos`
+3. `ls`
 
-e
+
 Creo que lo que hace es obtener los diferentes comandos con el *pipe* (**|**) sin chequear si hay *<<* entre los argumentos:
 1. `cat << uno` a `execve(...)`
 2. `cat << uno` a `execve(...)`
 2. `ls` a `execve(...)`
 
+## Varias pruebas con redirecciones
+
+### `<< 2 cat >delete.txt | << 1 cat > delete2.txt | cat > final.txt`
+
+```bash
+bash-3.2$ << 2 cat >delete.txt | << 1 cat > delete2.txt | cat > final.txt
+> dos
+> 2
+> uno
+> 1
+bash-3.2$ cat delete.txt
+dos
+bash-3.2$ cat delete2.txt
+uno
+bash-3.2$ cat final.txt
+bash-3.i2$
+```
+
+### `<< 2 cat | << 1 cat | cat > final.txt`
+
+```bash
+bash-3.2$ << 2 cat | << 1 cat | cat > final.txt
+> dos
+> 2
+> uno
+> 1
+bash-3.2$ cat final.txt
+uno
+bash-3.2$
+```
+
+### `<< 2 cat | << 1 cat | <tem.txt cat > final.txt`
+
+```bash
+bash-3.2$ echo "to the final" > tem.txt
+bash-3.2$ << 2 cat | << 1 cat | <tem.txt cat > final.txt
+> dos
+> 2
+> uno
+> 1
+bash-3.2$ cat final.txt
+to the final
+bash-3.2$
+```
