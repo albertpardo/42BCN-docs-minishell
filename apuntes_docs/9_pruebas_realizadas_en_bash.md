@@ -379,4 +379,33 @@ bash-3.2$ 'echo 'Mensaje Salida'' | grep a
 bash: echo Mensaje: command not found
 ```
 
+#### 'echo ' Mensaje Salida''
+
+```sh
+bash-3.2$ 'echo ' Mensaje Salida''
+bash: echo : command not found
+bash-3.2$
+```
+
+#### Pruebas con variable de entorno
+
+Definición variable: 
+
+```sh
+MIVAR=100
+```
+
+##### 'echo' 'Mensaje Salida:$MIVAR'
+
+```sh
+bash-3.2$ 'echo' 'Mensaje Salida:$MIVAR'
+Mensaje Salida:$MIVAR
+```
+
+##### 'echo' "Mensaje Salida:$MIVAR"
+
+```sh
+bash-3.2$ 'echo' "Mensaje Salida:$MIVAR"
+Mensaje Salida:100
+```
 
