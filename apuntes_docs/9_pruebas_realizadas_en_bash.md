@@ -91,11 +91,6 @@ Tendriamos que probar formatos null de entrada para temas de errores.
 
 ## Pruebas en Bash
 
-### Ver como podemos evitar : Crash terminal
-
-[these characters will crash your computer](https://www.youtube.com/watch?v=xqo3xtkfuic&list=PLGU1kcPKHMKj5yA0RPb5AK4QAhexmQwrW&index=17). Instruction :
-`:(){ :|:& };:`
-
 ### Exit
 
 Estando en el shell por defecto de iMAC , que es *zsh* hago la siguiente prueba:
@@ -367,3 +362,21 @@ bash-3.2$ cat final.txt
 to the final
 bash-3.2$
 ```
+
+### Pruebas PIPES y comillas
+
+#### 'echo "Mensaje Salida"' | grep a
+
+```sh
+bash-3.2$ 'echo "Mensaje Salida"' | grep a
+bash: echo "Mensaje Salida": command not found
+```
+
+#### 'echo 'Mensaje Salida'' | grep a
+
+```sh
+bash-3.2$ 'echo 'Mensaje Salida'' | grep a
+bash: echo Mensaje: command not found
+```
+
+

@@ -2,9 +2,9 @@
 
 Documentación creada para el proyecto **MINISHELL** de [42 Barcelona](https://www.42barcelona.com/)
 
-Listado de archivos de la carpeta *apuntes_docs*:
+Consultar [Bash Reference Manual online](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
 
-## 
+## Listado de archivos de la carpeta *apuntes_docs*
 
 - [en_subject_minishell](apuntes_docs/1_en_subject_minishell.md): Copia del subject del proyecto Minishell (20240111).
 - [our_annotations_onsubject](apuntes_docs/2_our_annotations_onsubject.md ): Anotaciones que hemos considerado interesantes añadir sobre el subject original.
