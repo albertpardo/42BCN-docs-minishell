@@ -2,8 +2,7 @@
 
 ### Compila
 
-- Utiliza `make -n`  para verificar que la compilación
-- utilice `-Wall -Werror -Wextra`, si no utiliza el flag de compilación inválida.
+- Utiliza `make -n`  para verificar que la compilación utilice `-Wall -Werror -Wextra`, si no utiliza el flag de compilación inválida.
 - **minishell** compila sin errores, si no, utiliza el flag apropiado.
 - El Makefile no debe hacer relink. Si no, utiliza el flag apropiado.
 
@@ -12,11 +11,11 @@
 
 ### Comandos simples y la variable global
 
-- Ejecuta un comando sencillo con una ruta absoluta de la forma `/bin/ls`, o cualquier otro comando sin argumentos.
-- ¿Cuántas variables globales utiliza? ¿Por qué? Debe dar un ejemplo concreto de por qué le parece necesario o lógico.
+- Ejecuta un comando sencillo con una ruta absoluta de la forma `/bin/ls`, o cualquier otro comando sin argumentos. ¿Cuántas variables globales utiliza? ¿Por qué? Debe dar un ejemplo concreto de por qué le parece necesario o lógico.
 - Compruebe la variable global. Esta variable global no puede proporcionar otra información o acceso a datos que el número de una señal recibida.
 - Prueba un comando vacío.
 - Prueba solo tabuladores o espacios.
+
 - Si el programa termina, utiliza el flag de crash.
 - Si algo no funciona, utiliza el flag de trabajo incompleto.
 
@@ -27,6 +26,7 @@
 
 - Ejecuta un comando simple con una ruta absoluta como `/bin/ls`, u otro comando con argumentos pero sin comillas simples y comillas dobles.
 - Hazlo varias veces con distintos comandos y argumentos.
+
 - Si el programa termina, utiliza el flag de crash.
 - Si algo no funciona, utiliza el flag de trabajo incompleto.
 
@@ -37,6 +37,7 @@
 
 - Ejecuta el comando `echo` con o sin argumentos, y con o sin `-n`.
 - Hazlo múltiples veces con distintos argumentos.
+
 - Si el programa termina, utiliza el flag de crash.
 - Si algo no funciona, utiliza el flag de trabajo incompleto.
 
@@ -48,6 +49,7 @@
 - Ejecuta el comando `exit` con o sin argumentos.
 - Hazlo varias veces con distintos argumentos.
 - No olvides lanzar de nuevo minishell.
+
 - Si el programa termina, utiliza el flag de crash.
 - Si algo no funciona, utiliza el flag de trabajo incompleto.
 
@@ -60,6 +62,7 @@
 - Comprueba el valor devuelto. Puedes hacer lo mismo en bash y comparar ambos resultados.
 - Hazlo varias veces, con distintos comandos y argumentos. Ejecuta algunos comandos que fallen como `/bin/ls archivo_que_no_existe`.
 - Algo como `expr $? + $?`.
+
 - Si el programa termina, utiliza el flag de crash.
 - Si algo no funciona, utiliza el flag de trabajo incompleto.
 
@@ -79,6 +82,7 @@
 - Verifica que `ctrl-\` después de ejecutar un comando bloqueante como `cat` sin argumentos o `grep "algo"`.
 - Verifica que `ctrl-D` después de ejecutar un comando bloqueante como cat sin argumentos o `grep "algo"`.
 - Hazlo varias veces con distintos comandos.
+
 - Si el programa termina, utiliza el flag de crash.
 - Si algo no funciona, utiliza el flag de trabajo incompleto.
 
@@ -88,8 +92,9 @@
 ### Comillas dobles
 
 - Ejecuta un comando simple con argumentos, esta vez con comillas dobles (deberías probar a incluir espacios en blanco también).
-- Un comando como `echo "cat lol.c | cat > loli.c"`
+- Un comando como `echo "cat lol.c | cat > lol.c"`
 - Cualquier cosa, salvo `$`.
+
 - Si el programa termina, utiliza el flag de crash.
 - Si algo no funciona, utiliza el flag de trabajo incompleto.
 
@@ -160,7 +165,7 @@
 
 - Ejecuta comandos, pero esta vez sin rutas (*ls, wc, awk, etc*).
 - Elimina `$PATH` y verifica que ya no funcionen.
-- Establece `$PATH~` para varios directorios (`directorio1:directorio2`) y valida que los directorios se comprueban de izquierda a derecha.
+- Establece `$PATH` para varios directorios (`directorio1:directorio2`) y valida que los directorios se comprueban de izquierda a derecha.
 
 - [ ] Yes
 - [ ] No
