@@ -102,4 +102,37 @@ tres
 minish$
 ```
 
+## `ls || grep a`
 
+Previamente se ejecuta:
+
+```sh
+bash-3.2$ ls
+LICENSE		inc		readline
+Makefile	minishell	src
+README.md	print.sh
+```
+
+En Bash tenemos :
+
+```sh
+bash-3.2$ ls || grep a
+LICENSE		inc		readline
+Makefile	minishell	src
+README.md	print.sh
+```
+
+### lajara
+
+```sh
+minish$ ls || grep a
+minish: syntax error near token '|'
+```
+
+
+### maia
+
+```sh
+minishell$ ls || grep a
+minishell: syntax error near unexpected token '|'
+```

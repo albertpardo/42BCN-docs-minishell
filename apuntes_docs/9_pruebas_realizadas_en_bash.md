@@ -363,6 +363,35 @@ to the final
 bash-3.2$
 ```
 
+### Pruebas PIPE
+
+#### 'ls || grep a'
+
+Ejecución previa:
+
+```sh
+bash-3.2$ ls
+LICENSE		inc		readline
+Makefile	minishell	src
+README.md	print.sh
+```
+
+Ejecución de `ls || grep a`:
+
+```sh
+bash-3.2$ ls || grep a
+LICENSE		inc		readline
+Makefile	minishell	src
+README.md	print.sh
+```
+
+#### 'ls ||| grep a'
+
+```sh
+bash-3.2$ ls ||| grep a
+bash: syntax error near unexpected token `|'
+```
+
 ### Pruebas PIPES y comillas
 
 #### 'echo "Mensaje Salida"' | grep a
@@ -408,4 +437,6 @@ Mensaje Salida:$MIVAR
 bash-3.2$ 'echo' "Mensaje Salida:$MIVAR"
 Mensaje Salida:100
 ```
+
+
 
