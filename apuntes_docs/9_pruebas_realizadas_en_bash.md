@@ -363,9 +363,9 @@ to the final
 bash-3.2$
 ```
 
-### Pruebas PIPE
+## Pruebas PIPE
 
-#### 'ls || grep a'
+### `'ls || grep a'`
 
 Ejecución previa:
 
@@ -385,37 +385,37 @@ Makefile	minishell	src
 README.md	print.sh
 ```
 
-#### 'ls | | grep a'
+### `'ls | | grep a'`
 
 ```sh
 bash-3.2$ ls | | grep a
 bash: syntax error near unexpected token `|'
 ```
 
-#### 'ls ||| grep a'
+### `'ls ||| grep a'`
 
 ```sh
 bash-3.2$ ls ||| grep a
 bash: syntax error near unexpected token `|'
 ```
 
-### Pruebas PIPES y comillas
+## Pruebas PIPES y comillas
 
-#### 'echo "Mensaje Salida"' | grep a
+### `'echo "Mensaje Salida"' | grep a`
 
 ```sh
 bash-3.2$ 'echo "Mensaje Salida"' | grep a
 bash: echo "Mensaje Salida": command not found
 ```
 
-#### 'echo 'Mensaje Salida'' | grep a
+### `'echo 'Mensaje Salida'' | grep a`
 
 ```sh
 bash-3.2$ 'echo 'Mensaje Salida'' | grep a
 bash: echo Mensaje: command not found
 ```
 
-#### 'echo ' Mensaje Salida''
+### `'echo ' Mensaje Salida''`
 
 ```sh
 bash-3.2$ 'echo ' Mensaje Salida''
@@ -423,7 +423,7 @@ bash: echo : command not found
 bash-3.2$
 ```
 
-### Pruebas con variable de entorno
+## Pruebas con variable de entorno
 
 Definición variable: 
 
@@ -431,19 +431,17 @@ Definición variable:
 MIVAR=100
 ```
 
-##### 'echo' 'Mensaje Salida:$MIVAR'
+### 'echo' 'Mensaje Salida:$MIVAR'
 
 ```sh
 bash-3.2$ 'echo' 'Mensaje Salida:$MIVAR'
 Mensaje Salida:$MIVAR
 ```
 
-##### 'echo' "Mensaje Salida:$MIVAR"
+### 'echo' "Mensaje Salida:$MIVAR"
 
 ```sh
 bash-3.2$ 'echo' "Mensaje Salida:$MIVAR"
 Mensaje Salida:100
 ```
-
-
 
