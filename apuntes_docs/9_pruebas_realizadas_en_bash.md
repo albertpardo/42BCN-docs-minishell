@@ -445,3 +445,17 @@ bash-3.2$ 'echo' "Mensaje Salida:$MIVAR"
 Mensaje Salida:100
 ```
 
+## Pruebas con $
+
+```sh
+bash-3.2$ echo $
+$
+bash-3.2$ echo $0
+bash
+bash-3.2$ echo $5
+
+bash-3.2$ echo $$
+8403
+bash-3.2$ echo $$$$
+84038403
+```
