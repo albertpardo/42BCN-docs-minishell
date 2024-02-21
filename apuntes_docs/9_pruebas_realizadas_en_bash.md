@@ -385,6 +385,13 @@ Makefile	minishell	src
 README.md	print.sh
 ```
 
+#### 'ls | | grep a'
+
+```sh
+bash-3.2$ ls | | grep a
+bash: syntax error near unexpected token `|'
+```
+
 #### 'ls ||| grep a'
 
 ```sh
@@ -416,7 +423,7 @@ bash: echo : command not found
 bash-3.2$
 ```
 
-#### Pruebas con variable de entorno
+### Pruebas con variable de entorno
 
 Definición variable: 
 
