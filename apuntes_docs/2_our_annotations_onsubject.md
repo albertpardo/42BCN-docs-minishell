@@ -160,21 +160,31 @@ Your shell should:
 >	- Probado con 
 > - `'"ls"`  . Aqui *bash* entra en una especie de editor donde espera cerrar la comilla simple.
 
-
 - Implement redirections:
 	- *<* should redirect input.
 	- *>* should redirect output.
 	- *<<* should be given a delimiter, then read the input until a line containing the delimiter is seen. However, it doesn’t have to update the history!
 		- > Creo que aqui hemos de usar el concepto de [here-document](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_07_04) de bash. Extraido de : [How does "cat << EOF" work in bash?](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash)
-		- 
-	
 	- *>>* should redirect output in append mode.
 - Implement **pipes (| character)**. The output of each command in the pipeline is connected to the input of the next command via a pipe.
 -	Handle environment variables (**$ followed by a sequence of characters**) which should expand to their values.
 -	Handle **$?** which should expand to the exit status of the most recently executed foreground pipeline.
+	- Para conocer el valor de salida del que genera un programa, se necesita estas macros asociadas con las diversas funciones `wait`  : `WIFEXITED` y `WEXITSTATUS`. El valor devuelto por `WEXITSTATUS` se puede asignar a una *variable global* o a una variable contenida en una *struct que se pase entre las funciones*. Ejemplo de uso (extraido de [link](https://www.ibm.com/docs/en/ztpf/1.1.0.15?topic=zca-wifexitedquery-status-see-if-child-process-ended-normally)):
+		- ```c
+			pid_t rc_pid;
+			int   chld_state;
+			...
+			rc_pid = wait( &chld_state );
+			if (rc_pid > 0)
+			{	
+			  if (WIFEXITED(chld_state)) {
+				    printf("Child exited with RC=%d\n",WEXITSTATUS(chld_state));
+ 			}
+		  ```
 - Handle **ctrl-C**, **ctrl-D** and **ctrl-\\** which should behave like in bash.
 - In interactive mode:
 	- **ctrl-C** displays a new prompt on a new line.
+		- Cuando se usa en `cat` , aparece en pantalla `^C`
 	- **ctrl-D** exits the shell.
 	- **ctrl-\\** does nothing.
 - Your shell must implement the following builtins:

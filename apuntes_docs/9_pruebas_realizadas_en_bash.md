@@ -425,10 +425,10 @@ bash-3.2$
 
 ## Pruebas con variable de entorno
 
-Definición variable: 
+La definición variable se ha de hacer con `export`, de esta manera queda en el entorno de la sesión actual de *bash*: 
 
 ```sh
-MIVAR=100
+export MIVAR=100
 ```
 
 ### 'echo' 'Mensaje Salida:$MIVAR'
