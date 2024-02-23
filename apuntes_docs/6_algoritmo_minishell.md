@@ -1,6 +1,61 @@
 # Algoritmo minishell
 
-## Consideraciones previas
+## 240223 Algoritmo
+
+Para tener las variables de entorno al inicio del programa se usa : `int	main(int argc, char **argv, char **envp)`. Donde  `*char **envp`
+
+### Pasos previos
+
+- Gestión errores entrada iniciales.
+- Inicializar   con las variables contenidas en una *estructura*  a usar por la funciones del programa . La *estructura* se pasa como parámetro en cualquier función.
+
+
+### Bucle MINISHELL:
+
+-  Obtener **input** del teclado
+- **Tokenizar ( lexer )**  : Distinguir WORD, PIPE, LESS, LESS_LESS, GREAT , GREAT_GREAT
+	- Si hay simple comilla  o doble comillas sin cerrar:
+		- ERROR y volver al inicio de **Bucle MINISHELL**
+	- Si hay más de una PIPE seguidas:
+		- ERROR y volver al inicio **Bucle MINISHELL**
+- **Parser**:
+	- Si se empieza con PIPE 
+		-  return(ERROR)
+	- Bucle **recorrer la lista de TOKENS**
+		- Si el nodo actual es un *operator* del tipo **PIPE** se borra de la lista de TOKENS.(Se actualiza el inicio de lista)
+		- Si el nodo actuali es **NULO** :
+			- Borrar *lista de TOKENS*
+			- return(ERROR)
+		- **FALTA TERMINAR LO QIUE HACE ESTE BUCLE**
+- Preparación previa  a **Executor**:
+	- Activar *SIGNALS*
+	- Reservar memoria para los PID de los forks.
+- Proceso **Executor** , se tiene encuenta las *redirecciones* (pueden estar en una lista)
+	- Bucle **recorrer la lista de COMMANDS**
+		- **Expander** para strig : 
+			- Expandir el *$* (se ha de comprobar de manera correcta)
+			- Si el comando es **export** borrar las comillas simples o dobles
+		- **Redirecciones** :
+			- Expandir el *$* (se ha de comprobar de manera correcta)
+			- Borrar las comillas simples o dobles
+		- **Heredoc** :
+			- Gestión de **lista de REDIRECCIONES** para detectar **LESS_LESS**
+		- **Ejecución** (tener encuenta el caso de un sólo comando):
+			- fork hijo:
+				- Reasignación STDIN y STDOUT
+				- Si REDIRECCIONES no son correctas 
+					- exit(1)
+				- Si hay **BuiltCommand**
+					- ejecutar **BuiltCommand** (puede tener path relativo ,absoluto, o se ha de buscar en *PATH*)
+					- exit con el exitcode del **BuiltCommand**
+				- Ejecutar **Command** (puede tener path relativo ,absoluto, o se ha de buscar en *PATH*). Lanzar **Error** si no enuentra *Command* y activar el correspondiente **exit code**
+			- En padre cerrar *pipes*
+			- Enterder `fd_in = check_fd_heredoc(tools, end, tools->simple_cmds);` de **maia**
+
+> Aviso para **Alberto**: Hay que entender la gestión del **HereDOC**			
+
+
+## 240115 Consideraciones previas
 
 Hay que replicar una parte de lo que hace el **bash**.
 
@@ -25,11 +80,11 @@ while(1)
 
 ## Posible Algoritmo base
 
-- Ejecutar *minishell* como un proceso paralelo (proceso hijo?) al *bash* del ordenador. El *(bash* del ordenador seria un proceso *padre*?) .
+- Ejecutar *minishell* como un proceso paralelo (proceso hijo?) al *bash* del ordenador. El *bash* del ordenador seria un proceso *padre*?) .
 	- **DUDA**: No deberia alterar las variables de entorno del proceso padre de ninguna manera?
 	- Cuando se ejecuta *minishell* , debe presentar su propio promt mientras espera un *comando*. Ejemplo : `msh-1.0$`(extraido de [minishell evaluation of amilliar and sbashir by zskeeter](https://www.youtube.com/watch?v=DAkCD6CsEFI)
 - Capturar las instrucciones introducidas desde teclado/fichero.
-- **Analisis sintactico**: 
+- **Analisis sintáctico**: 
 	- Si las instrucciones introducidas siguen un patron sintatico valido, pasan a ser ejecutadas.
 	- En caso contrario, *minishell* debera hacer lo que sea conveniente y presentar un error similar al que hace *bash*. (Puede pasar que no sepamos reproducir el error)
 	- Posibles algoritmos para esta parte ( extraido de [medium link](https://m4nnb3ll.medium.com/minishell-building-a-mini-bash-a-42-project-b55a10598218)):
@@ -44,3 +99,5 @@ while(1)
 	- Verificar si el comando es un comando valido en *bash*. Ejecutarlo y capturar su respuesta (por si hay error).
 	- En caso contrario verificar si tiene permisos de ejecucion, por que pude ser un script de shell. Ejecutarlo y capturar su respuesta (por si hay error).
 	- Reportar error tanto si no tiene permisos de ejecucion como si ha habido algun error durante la ejecucion.
+
+
