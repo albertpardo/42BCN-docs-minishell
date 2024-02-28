@@ -70,6 +70,12 @@ A list of Minishell links for topic **minishell-42**. See : https://github.com/t
 #### 240110 by Sergio
 - [Writing a Simple Shell](https://www.youtube.com/watch?v=z4LEuxMGGs8)
 
+#### 240228 By Sergio
+
+- [Resources Minishell by jotavare](https://github.com/jotavare/42-resources#03-minishell)
+- [Minishell by Toni-schmitt](https://github.com/toni-schmitt/minishell)
+- [Writing a Unix Shell - Part III](https://indradhanush.github.io/blog/writing-a-unix-shell-part-3/)
+
 ##### MIT
 
 - [Shell Program Explained](https://www.youtube.com/watch?v=ubt-UjcQUYg)
