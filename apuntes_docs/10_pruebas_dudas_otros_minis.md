@@ -129,10 +129,101 @@ minish$ ls || grep a
 minish: syntax error near token '|'
 ```
 
-
 ### maia
 
 ```sh
 minishell$ ls || grep a
 minishell: syntax error near unexpected token '|'
 ```
+
+## HEARDOCS
+
+### 1 Prueba en bash
+y
+```sh
+bash-3.2$ cat << EOF
+> Current dir $PWD
+> login : $(whoami)
+> EOF
+Current dir /Users/apardo-m
+login : apardo-m
+bash-3.2$
+```
+
+#### Lajara
+
+```sh
+minish$ cat << EOF
+> Current dir $PWD
+> login : $(whoami)
+> EOF
+Current dir /Users/apardo-m/Documents/23-Cursus/03_circle/2_minishell/others/lajara
+login : $(whoami)
+minish$
+```
+
+#### Maia
+
+```sh
+minishell$ cat << EOF
+> Current dir $PWD
+> login : $(whoami)
+> EOF
+Current dir /Users/apardo-m/Documents/23-Cursus/03_circle/2_minishell/others/maiadegraaf
+login :
+```
+
+#### 240308  Prueba en fichero : '60_execve_cat_1.c'
+
+Como se ve a continuación , a fecha de 240308 no tengo contemplado la substitucion de variables de entorno con $
+
+
+```sh
+cbr1s3:test_previos (master*) $ ./a.out
+Emulando la instrucción 'cat << uno'
+> Current dir $PWD
+> login : $(whoami)
+> uno
+Temporal file: .tmp_heredoc
+Start of execve call /bin/cat:
+=================================
+Current dir $PWD
+login : $(whoami)
+```
+
+### 2 Prueba en bash
+
+```sh
+bash-3.2$ cat << EOF
+>  Current dir $PWD
+>  login : $whoami
+> EOF
+ Current dir /Users/apardo-m
+ login :
+bash-3.2$
+```
+
+#### Lajara
+
+```sh
+minish$ cat << EOF
+>  Current dir $PWD
+>  login : $whoami
+> EOF
+ Current dir /Users/apardo-m/Documents/23-Cursus/03_circle/2_minishell/others/lajara
+ login :
+minish$
+```
+
+#### Maia
+
+```sh
+minishell$ cat << EOF
+> Current dir $PWD
+> login : $whoami
+> EOF
+Current dir /Users/apardo-m/Documents/23-Cursus/03_circle/2_minishell/others/maiadegraaf
+login :
+minishell$
+```
+

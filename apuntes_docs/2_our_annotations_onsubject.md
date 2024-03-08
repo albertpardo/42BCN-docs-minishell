@@ -165,6 +165,8 @@ Your shell should:
 	- *>* should redirect output.
 	- *<<* should be given a delimiter, then read the input until a line containing the delimiter is seen. However, it doesn’t have to update the history!
 		- > Creo que aqui hemos de usar el concepto de [here-document](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_07_04) de bash. Extraido de : [How does "cat << EOF" work in bash?](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash)
+		- En este [Tutorial de uso de Heredoc](https://phoenixnap.com/kb/bash-heredoc) indica que la sintaxis del Heredoc es `[COMMAND] <<[-] 'DELIMITER'` . Este delimitador  **<<-** no esta contemplado en este enunciado. Tambien comenta el tratamiento especial cuando detecta variables de entorno del tipo **$**. **MIRAR COMO LO TRATAN OTROS ESTUDIANTES DE 42**
+
 	- *>>* should redirect output in append mode.
 - Implement **pipes (| character)**. The output of each command in the pipeline is connected to the input of the next command via a pipe.
 -	Handle environment variables (**$ followed by a sequence of characters**) which should expand to their values.
