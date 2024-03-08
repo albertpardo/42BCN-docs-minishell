@@ -165,8 +165,11 @@ Your shell should:
 	- *>* should redirect output.
 	- *<<* should be given a delimiter, then read the input until a line containing the delimiter is seen. However, it doesn’t have to update the history!
 		- > Creo que aqui hemos de usar el concepto de [here-document](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_07_04) de bash. Extraido de : [How does "cat << EOF" work in bash?](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash)
-		- En este [Tutorial de uso de Heredoc](https://phoenixnap.com/kb/bash-heredoc) indica que la sintaxis del Heredoc es `[COMMAND] <<[-] 'DELIMITER'` . Este delimitador  **<<-** no esta contemplado en este enunciado. Tambien comenta el tratamiento especial cuando detecta variables de entorno del tipo **$**. **MIRAR COMO LO TRATAN OTROS ESTUDIANTES DE 42**
-
+		- En este [Tutorial de uso de Heredoc](https://phoenixnap.com/kb/bash-heredoc) indica que la sintaxis del Heredoc es `[COMMAND] <<[-] 'DELIMITER'` . Este delimitador  **<<-** no esta contemplado en este enunciado. i
+		- Casos uando el **DELIMETER** esta entre comillas ya sean simples o dobles.
+			- Si aparece un **$** segido de una palbra, (Ejemplo : $VALOR) se ha de sustituir por la variable definida en *environment*
+			- Las comillas se tienen en cuenta para validar el **DELIMITER** como delimitador de fin de edición del heredoc. 
+ 
 	- *>>* should redirect output in append mode.
 - Implement **pipes (| character)**. The output of each command in the pipeline is connected to the input of the next command via a pipe.
 -	Handle environment variables (**$ followed by a sequence of characters**) which should expand to their values.
@@ -182,6 +185,13 @@ Your shell should:
 			  if (WIFEXITED(chld_state)) {
 				    printf("Child exited with RC=%d\n",WEXITSTATUS(chld_state));
  			}
+		  ```
+	- Otra posibilidad es:
+		- ```c
+			if (WIFEXITED(status))
+				return (WEXITSTATUS(status));
+			else if (WIFSIGNALED(status) && (WTERMSIG(status) == SIGINT))
+				return (EXIT_FAILURE);				
 		  ```
 - Handle **ctrl-C**, **ctrl-D** and **ctrl-\\** which should behave like in bash.
 - In interactive mode:
