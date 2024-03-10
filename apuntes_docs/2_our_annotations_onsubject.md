@@ -197,8 +197,31 @@ Your shell should:
 - In interactive mode:
 	- **ctrl-C** displays a new prompt on a new line.
 		- Cuando se usa en `cat` , aparece en pantalla `^C`
-	- **ctrl-D** exits the shell.
+			- **240309** Se puede solucionar usando en un fork la siguiente funcion pasando un **FALSE**  (lo ejecuta el hijo):
+			- ```c
+				 // If print is TRUE signals will be printed, otherwise they won't.
+				 void	signals_print_handler(int print)
+				 {
+					struct termios	tc;
+
+					tcgetattr(0, &tc);
+					tc.c_lflag &= ~ECHOCTL;
+					if (print == TRUE)
+						tc.c_lflag |= ECHOCTL;
+					tcsetattr(0, TCSANOW, &tc);
+			 	}
+			  ```
+			-  **240309** Además de la función anterior, se ha de capturar el  con `signal(SIGINT, heredoc_handler);` y manejar lo que se tenga que hacer dentro de la función handler asociadad (en este caso *heredoc_handler*)
+	- **ctrl-D** exits the shell.demas de la función anterior se ha se capturar 
 	- **ctrl-\\** does nothing.
+		- **240309 TODO : resolverlo** Probando heardocs con *61_execve_cat_2.c* y usando `signal(SIGQUIT, SIG_IGN)` imprime lo siguiente en pantalla y se sale del programa:
+		- ```sh
+			bash-3.2$ ./a.out
+			Emulando la instrucción 'cat << uno' ejecutandose desde un fork
+			> sadff
+			> Quit: 3
+			bash-3.2$
+		  ```
 - Your shell must implement the following builtins:
 	- **echo** with option **-n**
 	- **cd** with only a relative or absolute path
