@@ -212,7 +212,7 @@ Your shell should:
 			 	}
 			  ```
 			-  **240309** Además de la función anterior, se ha de capturar el  con `signal(SIGINT, heredoc_handler);` y manejar lo que se tenga que hacer dentro de la función handler asociadad (en este caso *heredoc_handler*)
-	- **ctrl-D** exits the shell.demas de la función anterior se ha se capturar 
+	- **ctrl-D** exits the shell. 
 	- **ctrl-\\** does nothing.
 		- **240309 TODO : resolverlo** Probando heardocs con *61_execve_cat_2.c* y usando `signal(SIGQUIT, SIG_IGN)` imprime lo siguiente en pantalla y se sale del programa:
 		- ```sh
