@@ -194,6 +194,9 @@ Your shell should:
 				return (EXIT_FAILURE);				
 		  ```
 - Handle **ctrl-C**, **ctrl-D** and **ctrl-\\** which should behave like in bash.
+	- HEREDOCS
+		-  **ctrl-D** equivale a un NULL . Para que se comporte como en bash , se ha de usar `ft_putstr("\033[A\033[2K> ")` al detectar el **ctrl-D**
+		-  **ctrl-\\** No hace nada/
 - In interactive mode:
 	- **ctrl-C** displays a new prompt on a new line.
 		- Cuando se usa en `cat` , aparece en pantalla `^C`
@@ -214,19 +217,13 @@ Your shell should:
 			-  **240309** Además de la función anterior, se ha de capturar el  con `signal(SIGINT, heredoc_handler);` y manejar lo que se tenga que hacer dentro de la función handler asociadad (en este caso *heredoc_handler*)
 	- **ctrl-D** exits the shell. 
 	- **ctrl-\\** does nothing.
-		- **240309 TODO : resolverlo** Probando heardocs con *61_execve_cat_2.c* y usando `signal(SIGQUIT, SIG_IGN)` imprime lo siguiente en pantalla y se sale del programa:
-		- ```sh
-			bash-3.2$ ./a.out
-			Emulando la instrucción 'cat << uno' ejecutandose desde un fork
-			> sadff
-			> Quit: 3
-			bash-3.2$
-		  ```
+
 - Your shell must implement the following builtins:
 	- **echo** with option **-n**
 	- **cd** with only a relative or absolute path
 	- **pwd** with no options
 	- **export** with no options
+		- Ha de expandir $ . Ejemplo: `export VAR=$VAR+57` . Se trata de una reasignación concatenando lo que conteniene $VAR con +57.
 	- **unset** with no options
 	- **env** with no options or arguments
 	- **exit** with no options
