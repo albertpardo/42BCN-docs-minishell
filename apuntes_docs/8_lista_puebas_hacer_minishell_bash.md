@@ -13,7 +13,21 @@
 - `env -i bash` :   Elimina el environment de bash
 - `env`	: Vemos que environmet queda en bash
 
-### HerrDocs
+> NOTA : El subject no indica nada de eliminar el **Enviroment** al ejectuar *minishell*
+
+> *Lajara* No tiene encuenta esto. Al ejecutar `env -i ./minishell` y despues `env` , no aparece nada en pantalla , con las limitaciones que implica.
+
+#### Soluciones
+
+Si se detecta que el **env** es **NULL** :
+
+1. lanzar un aviso y pemitir la ejecucion del *minishell* con esta limitación.
+
+2. lanzar un error y parar *minishell*
+
+3. Usar un *entorno* por defecto los más parecido al que genera bash
+
+### HereDocs
 
 - `cat << "2"`
 - `cat << 2`
