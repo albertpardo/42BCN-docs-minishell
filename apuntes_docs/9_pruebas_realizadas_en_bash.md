@@ -1,6 +1,6 @@
 # Pruebas realizadas en un terminal en modo BASH
 
-Para todas las pruebas , cambias al shell **BASH**
+Para todas las pruebas , cambiar al shell **BASH**
 
 Ejemplo de cambio de *zsh*  a **bash** sobre iMAC de 42 BArcelona a 20240121:
 
@@ -263,7 +263,7 @@ bash-3.2$
 
 ## Pruebas con \<\<
 
-Ejemplo extraido de [How does cat << EOF  work in bash?](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash) y ejecutado localmente:
+Ejemplo extraido de [How does cat \<\< EOF  work in bash?](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash) y ejecutado localmente:
 
 ```sh
 bash-3.2$ cat <<EOF > print.sh
@@ -459,3 +459,36 @@ bash-3.2$ echo $$
 bash-3.2$ echo $$$$
 84038403
 ```
+
+
+## cd . Comprobar PWD y OLDPWD
+
+1. Comprobamos PWD y OLDPWD
+
+```sh
+bash-3.2$ echo $OLDPWD
+/Users/apardo-m
+bash-3.2$ echo $PWD
+/Users/apardo-m
+```
+2. Cambiamos de carpeta *Documents* . Comprobamos PWD y OLDPWD:
+
+```sh
+ash-3.2$ cd Documents/
+bash-3.2$ echo $PWD
+/Users/apardo-m/Documents
+bash-3.2$ echo $OLDPWD
+/Users/apardo-m
+```
+3. Cambiamos de carpeta *23-Cursus* . Comprobamos PWD y OLDPWD:
+
+```sh
+bash-3.2$ cd 23-Cursus
+bash-3.2$ echo $PWD
+/Users/apardo-m/Documents/23-Cursus
+bash-3.2$ echo $OLDPWD
+/Users/apardo-m/Documents
+```
+
+**Conclusión**
+Si se trabaja con una copia dentro del programa del ENVIRONMENT del bash , en esta copia hemos de actualizar *PWD* y *OLDPWD*
