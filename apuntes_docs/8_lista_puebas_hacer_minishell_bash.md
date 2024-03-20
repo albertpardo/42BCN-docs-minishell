@@ -13,6 +13,7 @@
   ```
 
 - `echo hello > a > b > c >d`
+	- Genera a,b,c vacios y escribe 'hola' en **d**
 
 - `Ctrl + c on Heredoc`
 
@@ -28,7 +29,7 @@
 	
 	yes the two exit result in different outputs
   ```
-- position of redirections in command string, it isn't common to many. basically the redir can be anywhere in the command. "echo >outfile hello <infile" would still take input from infile and output hello to outfile
+- position of redirections in command string, it isn't common to many. basically the redir can be anywhere in the command. `echo >outfile hello <infile` would still take input from infile and output hello to outfile
 
 - `Cat | cat << here | ls`
 
@@ -55,6 +56,39 @@
 
 ## Pruebas propias 
 
+### Prepuestas by Segio Peryra
+
+- ```bash
+	bash-3.2$ ls -la | grep Dec | wc -l
+       8
+	bash-3.2$ ls -la | grep Dec | wc -V
+		wc: illegal option -- V
+		usage: wc [-clmw] [file ...]
+	bash-3.2$
+	bash-3.2$ ls -la | grep Dec | wc -V
+		wc: illegal option -- V
+		usage: wc [-clmw] [file ...]
+	bash-3.2$ ls -la | grep Dac | wc -l
+       	0
+	bash-3.2$ ls -la | greap Dac | wc -l
+	bash: greap: command not found
+    	0
+  ```
+ 
+- ```bash
+ 	cat << end < f3 > f1 >> f2 >> f4
+	
+	entrada: abre el hd pero lee de f3
+	salida: crea f1, f2 y f4 pero guarda en f4 (edited) 
+	
+	cat < f3 > < f1 >> f2 >> f4
+		bash: syntax error near unexpected token `<'
+  ```
+- ```bash
+	 echo hello > f 1.txt
+	bash-3.2$ cat f
+	hello 1.txt 
+  ```
 ### Iniciar minishell con variables de entrada o con redirecciones de entrada salidad
 
 - `./minishell < /dev/urandom`
@@ -155,6 +189,29 @@ minishell$ cat <<EOF > print.sh
 - Ejecutar fichero dentro de minishell con **bash**: `minishell$ bash print.h`
 - Ejecutar fichero dentro de minishell con **bash**: `minishell$ ./minishell  print.h` -> **No se pide en el subject** por lo tanto, se espera un mensaje minishell no acepta parametros de entrada .
 
+## Comando con varias redirecciones de salida
+
+Si se ejecuta el siguiente comando varias veces siempre hace lo mismo. Crea todos los archivos vacios y en el útimo escribe lo que devuelve `cat`
+
+- ```sh
+	bash-3.2$ cat uno > a_uno > b_uno > c_uno >d_uno
+	bash-3.2$ cat _a_uno
+	bash-3.2$ cat b_uno
+	bash-3.2$ cat c_uno
+	bash-3.2$ cat d_uno
+	Hola desde Uno
+  ```
+Usando `>>` si el archivo no existe lo crea, si existe no hacenada y sólo en el *d_uno* añade lo que devuelve cat.
+
+- ```sh
+	bash-3.2$ cat uno >> a_uno >> b_uno >> c_uno >>d_uno
+	bash-3.2$ cat a_uno
+	bash-3.2$ cat b_uno
+	bash-3.2$ cat c_uno
+	bash-3.2$ cat d_uno
+	Hola desde Uno
+	Hola desde Uno
+  ```
 
 ## Links con pruebas para minishell
 
