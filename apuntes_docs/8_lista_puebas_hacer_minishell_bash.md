@@ -1,5 +1,58 @@
 # Listado de pruebas a realizar en Minishell / Bash
 
+## Extraido de Slack
+
+### 240320 by @ltreser on _world_pedagogy 
+
+[Link de la consulta en Sack](https://app.slack.com/client/T039P7U66/CN9RHKQHW)
+
+- ```sh
+	exit | exit
+	echo  a' '" "b
+	and export and unset in pipes
+  ```
+
+- `echo hello > a > b > c >d`
+
+- `Ctrl + c on Heredoc`
+
+- `export USER+=hello`
+
+- ```sh
+	$$
+	cat << "here"
+	cat << 'doc'
+	export WHAT='"'; echo $WHAT yes, this should work $WHAT
+	exit abc 123
+	exit 123 abc
+	
+	yes the two exit result in different outputs
+  ```
+- position of redirections in command string, it isn't common to many. basically the redir can be anywhere in the command. "echo >outfile hello <infile" would still take input from infile and output hello to outfile
+
+- `Cat | cat << here | ls`
+
+- Running minishell in minishell and handling signals such as Ctrl+C
+
+- Several Test 
+	- `export test='o a' && ech$test`  -> prints a in bash.
+	- `export test="'" && echo $test` -> prints ’ in bash.
+	- `export test="'" && echo "$test"` -> prints ’ in bash.
+	- [here’s a stackoverflow question about these ^](https://stackoverflow.com/questions/77717294/which-runs-first-in-bash-lexer-or-expander).
+	- `cd -`  -> changes directory to $OLDPWD in bash.
+	- `cd`  -> changes directory to $HOME in bash.
+	- **This is not in mandatory part** `mkdir ~/afoldername && chmod 000 ~/afoldername && export HOME=~/afoldername && cd`  -> permission denied error shows in bash.
+	- heredoc expands variables.
+	- `cat | echo a`  prints `a` and waits one newline in bash.
+	- `ls 1>outfile 2>&1`  redirects error outputs to file in bash.
+	- `echo -nnnn -n -n smthng`  works like `echo -n` in bash.
+	- `echo "\n"`  -> ‘\n’  and `echo \n`  -> ‘n’ in bash.
+	- `>outfile echo a` works like `echo a > outfile` in bash.
+	- `export $number="lol"`  doesn’t work in bash.
+	- if you run bash using `env -i` bash the PATH variable will not shown in `env` but if you use echo $PATH  you’ll see the actual value of it. However if you use unset PATH it really deletes the invisible variable.
+
+- if you do cat then press `ctrl + D`  or `ctrl + C`  and check the return value and `cat | cat | ls` then press `ctrl + D` or `ctrl + c` and check return value
+
 ## Pruebas propias 
 
 ### Iniciar minishell con variables de entrada o con redirecciones de entrada salidad
