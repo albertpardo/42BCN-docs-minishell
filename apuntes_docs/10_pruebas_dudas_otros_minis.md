@@ -226,4 +226,15 @@ Current dir /Users/apardo-m/Documents/23-Cursus/03_circle/2_minishell/others/mai
 login :
 minishell$
 ```
+## export
 
+Bash permite usar `export NOMBREVARIABLE+=loquesea`
+si no existe `NOMBREVARIABLE` la crea
+Si existe añade `loquesea` al final del contenido de `NOMBREVARIABLE`
+
+Tanto *lajara* como *maia* imprimen un error:
+
+```shell
+minish$ export MIVAR+=algo
+minish: export: 'MIVAR+=algo': not a valid identifier
+```

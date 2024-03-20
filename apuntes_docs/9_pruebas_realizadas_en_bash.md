@@ -492,3 +492,44 @@ bash-3.2$ echo $OLDPWD
 
 **Conclusión**
 Si se trabaja con una copia dentro del programa del ENVIRONMENT del bash , en esta copia hemos de actualizar *PWD* y *OLDPWD*
+
+## exit
+Según el valor númerico que se le da a `exit` , al realizar  `echo $` da un número mayor que 1
+
+### exit 9223372036854775807
+
+```sh
+bash-3.2$ exit 9223372036854775807
+exit
+car15s5:~ $ echo $?
+255
+```
+
+### exit 9223372036854775808
+
+```sh
+bash-3.2$ exit 9223372036854775808
+exit
+bash: exit: 9223372036854775808: numeric argument required
+car15s5:~ $ echo $?
+255
+```
+
+### exit -9223372036854775808
+
+```sh
+bash-3.2$ exit -9223372036854775808
+exit
+car15s5:~ $ echo $?
+0
+```
+
+### exit -9223372036854775809
+
+```sh
+bash-3.2$ exit -9223372036854775809
+exit
+bash: exit: -9223372036854775809: numeric argument required
+car15s5:~ $ echo $?
+255
+```
