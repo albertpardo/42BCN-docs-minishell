@@ -138,8 +138,10 @@ minishell: syntax error near unexpected token '|'
 
 ## HEARDOCS
 
-### 1 Prueba en bash
-y
+### Prueba comparativa 
+
+#### Prueba en bash
+
 ```sh
 bash-3.2$ cat << EOF
 > Current dir $PWD
@@ -173,7 +175,7 @@ Current dir /Users/apardo-m/Documents/23-Cursus/03_circle/2_minishell/others/mai
 login :
 ```
 
-#### 240308  Prueba en fichero : '60_execve_cat_1.c'
+### 240308  Prueba en fichero : '60_execve_cat_1.c'
 
 Como se ve a continuación , a fecha de 240308 no tengo contemplado la substitucion de variables de entorno con $
 
@@ -238,3 +240,22 @@ Tanto *lajara* como *maia* imprimen un error:
 minish$ export MIVAR+=algo
 minish: export: 'MIVAR+=algo': not a valid identifier
 ```
+
+## cd
+
+El enunciado especifica: 
+> **cd** with only a relative or absolute path
+
+Casos  a considerar:
+
+- `cd ~`
+- cd
+
+
+### cd ~
+
+Tanto *maia* como *lajara* imprimen un error : `minishell: ~ : No such file or directory`
+
+### cd
+
+Tanto *maia* como *lajara* lo ejecutan de manera equivalente a `cd $HOME` 
