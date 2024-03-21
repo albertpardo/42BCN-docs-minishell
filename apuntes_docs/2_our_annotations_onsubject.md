@@ -225,7 +225,7 @@ Your shell should:
 			- `cd`  (es equivalente a `cd $HOME`)
 			- `cd ~`
 	- **pwd** with no options
-		- Si despues de *pwd* hay carácteres:
+		- Si después de *pwd* hay carácteres:
 			- Se ignoran. como si no estuvieran. 
 			- Lanzar error.
 		- Que hacemos con `pwd -X` donde *X* puede ser cualquier char?. *Bash* lanza un error. (En otros minishell los ignoran)
@@ -234,10 +234,11 @@ Your shell should:
 		- Ha de expandir $ . Ejemplo: `export VAR=$VAR+57` . Se trata de una reasignación concatenando lo que conteniene $VAR con +57.
 	- **unset** with no options
 	- **env** with no options or arguments
-		- Si despues de *pwd* hay carácteres se puede optar por
+		- Si despues de *pwd* hay carácteres se puede optar por:
 			- Ignorar. como si no estuvieran. 
 			- Lanzar un error
 	- **exit** with no options
+		- Acepta salir con un valor númerico y puede ser del tipo "long int" (Ver código de otros minishells)
 
 
 The `readline()` function can cause memory leaks. You don’t have to fix them. But that doesn’t mean your own code, yes the code you wrote, can have memory leaks.
