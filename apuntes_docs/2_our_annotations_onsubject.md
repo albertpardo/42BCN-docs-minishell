@@ -218,9 +218,10 @@ Your shell should:
 	- **ctrl-D** exits the shell. 
 	- **ctrl-\\** does nothing.
 
+Conceptos: **option** y **argumentos** ver [Introduction to Bash](https://uofabioinformaticshub.github.io/BASH-Intro/notes/extra_command_syntax.html#:~:text=Options%20are%20settings%20built%20into,%2C%20(%20less%20and%20more%20).)
 - Your shell must implement the following builtins:
 	- **echo** with option **-n**
-	- **cd** with only a relative or absolute path
+	- **cd** with only a relative or absolute path. Ver [Absolute Path vs. Relative Path Explained](https://phoenixnap.com/kb/absolute-path-vs-relative-path)
 		- ?Qué hacemos con estos casos?:
 			- `cd`  (es equivalente a `cd $HOME`)
 			- `cd ~`
