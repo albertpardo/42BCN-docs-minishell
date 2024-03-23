@@ -234,9 +234,12 @@ Your shell should:
 		- Ha de expandir $ . Ejemplo: `export VAR=$VAR+57` . Se trata de una reasignación concatenando lo que conteniene $VAR con +57.
 	- **unset** with no options
 	- **env** with no options or arguments
-		- Si despues de *pwd* hay carácteres se puede optar por:
+		- Si despues de *env* hay carácteres se puede optar por:
 			- Ignorar. como si no estuvieran. 
-			- Lanzar un error
+			- Si la instrucción es del tipo `env -X XXX` , donde *X* es cualquier carácter, se puede:
+				1. Lanzar un error propio tipo **env: Options no suported** 
+				2. No ejecutar el comando `env`
+		- **Subshells** . Bash permite ejecutar otro shell dentro de él como si fuera un programa . En este caso, hay una variable de entorno denominada **SHLVL** que se incrementa cada vez que se ejecuta un nuevo shell. Links : [SHLVL](https://www.programming-books.io/essential/bash/shlvl-747400e783934776ba236599265fc212) , [4.12. Show Subshell Level with $SHLVL](https://docstore.mik.ua/orelly/unix3/upt/ch04_12.htm).
 	- **exit** with no options
 		- Acepta salir con un valor númerico y puede ser del tipo "long int" (Ver código de otros minishells)
 

@@ -533,3 +533,31 @@ bash: exit: -9223372036854775809: numeric argument required
 car15s5:~ $ echo $?
 255
 ```
+
+## Pruebas SHELLS anidados 
+
+Se compueba la variable de entorno **SHLVL** cada vez que se ejecuta un *bash* dentro de otro *bash*
+
+```sh
+car15s4:~ $ env | grep SHL
+SHLVL=1
+car15s4:~ $ bash
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+bash-3.2$ env | grep SHL
+SHLVL=2
+bash-3.2$ bash
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+bash-3.2$ env | grep SHL
+SHLVL=3
+bash-3.2$ zsh
+car15s4:~ $ env | grep SHL
+SHLVL=4
+```
+
+Cada vez que se ejecuta un nuevo *Shell* , al comprobar **SHLVL** , esta variable se incrementa en 1.
