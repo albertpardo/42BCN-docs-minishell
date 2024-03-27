@@ -561,3 +561,26 @@ SHLVL=4
 ```
 
 Cada vez que se ejecuta un nuevo *Shell* , al comprobar **SHLVL** , esta variable se incrementa en 1.
+
+## Expansión $
+
+Diversas pruebas de expasion de $
+
+```sh
+bash-3.2$ export MYVAR=algo
+bash-3.2$ echo 111-'$MYVAR='$MYVARR
+111-$MYVAR=
+bash-3.2$ echo 111-'$MYVAR='$MYVAR-
+111-$MYVAR=algo-
+bash-3.2$ echo 111-'$MYVAR='$MYVAR2
+111-$MYVAR=
+bash-3.2$ echo 111-'$MYVAR='
+111-$MYVAR=
+bash-3.2$ echo 111-'$MYVAR='$MYVAR2qwrqewr
+111-$MYVAR=
+bash-3.2$ echo 111-'$MYVAR='$MYVAR2qwrqewr rer
+111-$MYVAR= rer
+bash-3.2$ echo 111-'$MYVAR='$MYVAR"rer"
+111-$MYVAR=algorer
+bash-3.2$
+```
