@@ -32,7 +32,7 @@ Para tener las variables de entorno al inicio del programa se usa : `int	main(in
 	- Reservar memoria para los PID de los forks.
 - Proceso **Executor** , se tiene encuenta las *redirecciones* (pueden estar en una lista)
 	- Bucle **recorrer la lista de COMMANDS**
-		- **Expander** para strig : 
+		- **Expander** para strings (words) : 
 			- Expandir el *$* (se ha de comprobar de manera correcta)
 			- Si el comando es **export** borrar las comillas simples o dobles
 		- **Redirecciones** :
