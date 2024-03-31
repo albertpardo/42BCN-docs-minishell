@@ -2,13 +2,12 @@
 
 ## 240223 Algoritmo
 
-Para tener las variables de entorno al inicio del programa se usa : `int	main(int argc, char **argv, char **envp)`. Donde  `*char **envp`
+Para tener las variables de entorno al inicio del programa se usa : `int	main(int argc, char **argv, char **envp)`. Donde  `char **envp` recibe todas las variables de entorno al inicial el programa. 
 
 ### Pasos previos
 
 - Gestión errores entrada iniciales.
-- Inicializar   con las variables contenidas en una *estructura*  a usar por la funciones del programa . La *estructura* se pasa como parámetro en cualquier función.
-
+- Inicializar  con las variables contenidas en una *estructura*  a usar por la funciones del programa . La *estructura* se pasa como parámetro en cualquier función.
 
 ### Bucle MINISHELL:
 
