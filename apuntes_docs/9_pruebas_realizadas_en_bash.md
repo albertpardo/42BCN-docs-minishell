@@ -320,6 +320,115 @@ Creo que lo que hace es obtener los diferentes comandos con el *pipe* (**|**) si
 
 ## Varias pruebas con redirecciones
 
+Generar ficheros para pruebas 
+
+```sh
+echo f1 > f1; echo f2 > f2; echo f3 > f3; echo f4 > f4
+```
+
+### prueba básicas sin comando
+
+#### ` <f1 <<1`
+
+```sh
+bash-3.2$ <f1 <<1
+> hola
+> 1
+```
+
+#### ` <f1 <<1 >borrame` 
+
+```sh
+bash-3.2$ <f1 <<1 >borrame
+> hola
+> 1
+bash-3.2$ cat borrame
+bash-3.2$
+```
+
+#### ` <f1 <<1 <<2 <<3 >borrame` 
+
+```sh
+bash-3.2$ <f1 <<1 <<2 <<3 >borrame
+> hola
+> 1
+> hola
+> 2
+> hola
+> 3
+bash-3.2$ cat borrame
+bash-3.2$
+```
+
+### prueba básicas comando "cat"
+
+#### ` <f1 cat` 
+```sh
+bash-3.2$ <f1 cat
+f1
+```
+
+#### ` <f1 <f2 <f3 cat` 
+```sh
+bash-3.2$ <f1 <f2 <f3 cat
+f3
+```
+
+#### ` <f1 <f2 <f3 <<1 cat` 
+```sh
+bash-3.2$ <f1 <f2 <f3 <<1 cat
+> hola
+> 1
+hola
+```
+
+#### ` <f1 <f2 <f3 <<1 <<2 <<3 cat`
+
+```sh
+bash-3.2$ <f1 <f2 <f3 <<1 <<2 <<3 cat
+> hola
+> 1
+> hola
+> 2
+> hola3
+> 3
+hola3
+```
+
+#### ` <f1 <f2 <f3 <<1 <<2 <<3 < f4 cat` 
+
+```sh
+bash-3.2$ <f1 <f2 <f3 <<1 <<2 <<3 < f4 cat
+> hola1
+> 1
+> hola2
+> 2
+> hola3
+> 3
+f4
+```
+
+### prueba básicas comando "exit"
+
+#### `<f1 <f2 <f3 <<1 <<2 <<3 < f4 exit ` 
+
+```sh
+bash-3.2$ <f1 <f2 <f3 <<1 <<2 <<3 < f4 exit
+> hola1
+> 1
+> hola2
+> 2
+> hola3
+> 3
+exit
+```
+
+#### ` ` 
+
+```sh
+
+```
+
 ### `<< 2 cat >delete.txt | << 1 cat > delete2.txt | cat > final.txt`
 
 ```bash
