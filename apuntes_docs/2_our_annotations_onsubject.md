@@ -194,7 +194,9 @@ Your shell should:
 				return (EXIT_FAILURE);				
 		  ```
 - Handle **ctrl-C**, **ctrl-D** and **ctrl-\\** which should behave like in bash.
-	- HEREDOCS
+	- HEREDOCS 
+		> De forma temporal Los  heredocs se pueden guardar en archivos para poder procesarlos con las instrucciones que acepten redireccionar un heredoc como fichero de enttrada. Una opción es guardarlo en la cartepra **tmp** Consultado en : [Everything Essential About the tmp Directory in Linux](https://linuxhandbook.com/tmp-directory/#:~:text=What%20is%20the%20%2Ftmp%20directory,tmp%20directory%20after%20each%20reboot). Se usa para guardar ficheros temporales por un periodo de tiempo corto. Muchos sistemas Linux limpian esta carpeta tras cada *reboot* **OJO: NO TODOS** . Se puede usar la función permitida : **unlink** (ver más arriba)
+
 		-  **ctrl-D** equivale a un NULL . Para que se comporte como en bash , se ha de usar `ft_putstr("\033[A\033[2K> ")` al detectar el **ctrl-D**
 		-  **ctrl-\\** No hace nada/
 - In interactive mode:
@@ -214,7 +216,7 @@ Your shell should:
 					tcsetattr(0, TCSANOW, &tc);
 			 	}
 			  ```
-			-  **240309** Además de la función anterior, se ha de capturar el  con `signal(SIGINT, heredoc_handler);` y manejar lo que se tenga que hacer dentro de la función handler asociadad (en este caso *heredoc_handler*)
+			-  **240309** Además de la función anterior, se ha de capturar el  con `signal(SIGINT, heredoc_handler);` y manejar lo que se tenga que hacer dentro de la función handler asociada (en este caso *heredoc_handler*)
 	- **ctrl-D** exits the shell. 
 	- **ctrl-\\** does nothing.
 
