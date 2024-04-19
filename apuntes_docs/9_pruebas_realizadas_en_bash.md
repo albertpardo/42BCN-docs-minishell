@@ -693,3 +693,35 @@ bash-3.2$ echo 111-'$MYVAR='$MYVAR"rer"
 111-$MYVAR=algorer
 bash-3.2$
 ```
+
+## Pruebas para obtener $?=127, $?=126 y el valor devuelto por el ultimo comando
+
+### $?=127
+
+```sh
+bash-3.2$ la
+bash: la: command not found
+bash-3.2$ echo $?
+127
+```
+### $?=126
+
+```sh
+bash-3.2$ echo ls > eje.sh
+bash-3.2$ chmod 222 eje.sh
+bash-3.2$ ./minishell "bash eje.sh"
+bash-3.2$ echo $?
+126
+```
+
+### valor devuelto por el último comando
+
+Toma como base el ultimo ejemplo.
+
+```sh
+bash-3.2$ bash eje.sh | echo pepe
+bash-3.2$ echo $?
+pepe
+bash: eje.sh: Permission denied
+0
+```
